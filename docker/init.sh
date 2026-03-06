@@ -1,0 +1,1 @@
+obsutil config -e https://obs.ru-moscow-1.hc.sbercloud.ru -i ${AWS_ACCESS_KEY} -k ${AWS_SECRET_KEY}

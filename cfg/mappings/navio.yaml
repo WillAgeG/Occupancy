@@ -1,0 +1,273 @@
+# This file is covered by the LICENSE file in the root of this project.
+labels: 
+  0: "unlabeled"
+  1: "road"
+  2: "static"
+  3: "dynamic"
+  4: "invalid"
+color_map: # bgr
+  0: [0, 0, 0]
+  1: [255, 0, 255]
+  2: [255, 255, 50]
+  3: [245, 150, 100]
+  4: [0, 0, 0]
+# classes that are indistinguishable from single scan or inconsistent in
+# ground truth are mapped to their closest equivalent
+learning_map:
+  0: 0     # "unlabeled"
+  1: 1     # "road"
+  2: 2     # "other-object" to "unlabeled" ----------------------------mapped
+  3: 3     # "moving-car" to "car" ------------------------------------mapped
+  4: 4
+learning_map_inv: # inverse of previous map
+  0: 0      # "unlabeled", and others ignored
+  1: 1     # "road"
+  2: 2     # "other-object"
+  3: 3     # "moving-car"
+  4: 4
+split: # sequence numbers
+  # train:
+  #   - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__15
+  #   - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__17
+  # valid:
+  #   - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__15
+  # test:
+  #   - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__15
+  train:
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__1
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__11
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__13
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__15
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__17
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__19
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__2
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__21
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__22
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__23
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__24
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__28
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__29
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__3
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__30
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__31
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__4
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__40
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__41
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__43
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__49
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__5
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__51
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__53
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__55
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__57
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__62
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__7
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__70
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__71
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__72
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__76
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__77
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__79
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__8
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__9
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__1
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__11
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__14
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__16
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__17
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__18
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__29
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__30
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__31
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__33
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__35
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__4
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__45
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__52
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__55
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__56
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__6
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__1
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__15
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__17
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__2
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__20
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__21
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__24
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__27
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__29
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__3
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__37
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__38
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__41
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__49
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__5
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__54
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__55
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__58
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__59
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__6
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__8
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__9
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__1
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__10
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__11
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__12
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__13
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__14
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__16
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__18
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__19
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__2
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__20
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__22
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__25
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__27
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__29
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__3
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__31
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__32
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__33
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__34
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__36
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__39
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__5
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__50
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__53
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__54
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__56
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__57
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__58
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__59
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__60
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__61
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__62
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__63
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__64
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__67
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__68
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__69
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__7
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__70
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__72
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__73
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__74
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__76
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__78
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__8
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__80
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__9
+  valid:
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__26
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__38
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__56
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__78
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__49
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__10
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__11
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__13
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__14
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__16
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__19
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__2
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__22
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__25
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__26
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__3
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__32
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__35
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__36
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__40
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__43
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__44
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__45
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__46
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__48
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__5
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__50
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__51
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__53
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__56
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__15
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__2
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__21
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__23
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__24
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__26
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__28
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__35
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__37
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__38
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__4
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__40
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__41
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__42
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__43
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__44
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__46
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__48
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__49
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__51
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__6
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__65
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__71
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__75
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__77
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__79
+  test:
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__26
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__38
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__56
+    - kc2-055__logs__2025-10-01__03-38-33__situation__labeling__dev_test__78
+    - kc2-079__logs__2025-01-13__01-17-53__situation__labeling__dev_test__49
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__10
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__11
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__13
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__14
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__16
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__19
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__2
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__22
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__25
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__26
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__3
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__32
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__35
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__36
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__40
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__43
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__44
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__45
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__46
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__48
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__5
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__50
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__51
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__53
+    - kc2-110__logs__2025-07-15__12-16-17__situation__labeling__dev_test__56
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__15
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__2
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__21
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__23
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__24
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__26
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__28
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__35
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__37
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__38
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__4
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__40
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__41
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__42
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__43
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__44
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__46
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__48
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__49
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__51
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__6
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__65
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__71
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__75
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__77
+    - kc2-116__logs__2025-07-16__07-30-22__situation__labeling__dev_test__79

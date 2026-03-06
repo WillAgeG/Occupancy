@@ -1,0 +1,44 @@
+# This file is covered by the LICENSE file in the root of this project.
+labels: 
+  0: "unlabeled"
+  1: "road"
+  2: "static"
+  3: "dynamic"
+  4: "invalid"
+color_map: # bgr
+  0: [0, 0, 0]
+  1: [255, 0, 255]
+  2: [255, 255, 50]
+  3: [245, 150, 100]
+  4: [0, 0, 0]
+# classes that are indistinguishable from single scan or inconsistent in
+# ground truth are mapped to their closest equivalent
+learning_map:
+  0: 0     # "unlabeled"
+  1: 1     # "road"
+  2: 2     # "other-object" to "unlabeled" ----------------------------mapped
+  3: 3     # "moving-car" to "car" ------------------------------------mapped
+  4: 4
+learning_map_inv: # inverse of previous map
+  0: 0      # "unlabeled", and others ignored
+  1: 1     # "road"
+  2: 2     # "other-object"
+  3: 3     # "moving-car"
+  4: 4
+split: # sequence numbers
+  train:
+    - 0bcd77f9-bdfc-413c-a717-658e58dc2bd0_kc2-127_logs_2025-06-30_17-55-15__dwn_27_10_2025_21_16_25_data
+    - 0e61ed0a-b110-4911-a787-862fbf1a60a4_kc2-055_logs_2025-10-21_15-31-08__dwn_27_10_2025_20_07_59_data
+    - 3bd2c98d-15eb-4ea8-9167-2017d2dd7cf1_kc2-152_logs_2025-07-29_08-05-46__dwn_27_10_2025_18_14_26_data
+    - 4cad838c-40f2-4868-a22b-d0fa72606f29_kc2-098_logs_2025-10-15_12-36-19__dwn_27_10_2025_17_30_26_data
+    - 5c1d7582-bbb6-4e59-b021-ed4ea56f7bba_kc2-126_logs_2025-08-21_14-26-46__dwn_27_10_2025_21_33_11_data
+    - 7f71b2a8-94c6-42cd-9af2-3499cf8278e0_kc2-151_logs_2025-10-12_15-52-53__dwn_27_10_2025_20_47_23_data
+    - 71897eff-353a-4653-b0bf-fa3329897d6f_kc2-102_logs_2025-06-20_10-39-21__dwn_27_10_2025_21_30_02_data
+    - 96554b64-69d4-4b50-b5cf-e26752b37eaf_kc2-139_logs_2025-10-17_16-09-08__dwn_27_10_2025_19_17_00_data
+    - c80943e8-6cb8-4900-86e7-646aa53a9a0a_kc2-102_logs_2025-06-20_12-25-53__dwn_27_10_2025_21_27_25_data
+    - d5944dc5-39bc-4b9d-9898-ad8120c2b57d_kc2-055_logs_2025-10-21_14-14-09__dwn_27_10_2025_20_13_16_data
+  valid:
+    - 7c239c89-6d85-40dc-805d-c00330141a5d_kc2-110_logs_2025-08-13_08-49-59__dwn_27_10_2025_22_50_53_data
+    - ade2eb11-52e5-4aea-9c23-04cc35b0f961_kc2-081_logs_2025-06-08_10-05-02__dwn_27_10_2025_21_18_31_data
+  test:
+    - ade2eb11-52e5-4aea-9c23-04cc35b0f961_kc2-081_logs_2025-06-08_10-05-02__dwn_27_10_2025_21_18_31_data

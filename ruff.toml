@@ -1,0 +1,104 @@
+show-fixes = true
+line-length = 120
+target-version = "py310"
+
+[lint]
+select = ["ALL"]
+ignore = [
+    "ANN002",
+    "ANN003",
+    "ANN401",
+    "B019",
+    "B027",
+    "COM812",
+    "CPY",
+    "D",
+    "DOC",
+    "FBT",
+    "FIX002",
+    "INP",
+    "N803",
+    "N806",
+    "NPY002",
+    "PGH003",
+    "PLR2004",
+    "PLR6104",
+    "PLW1514",
+    "PTH118",
+    "PTH122",
+    "S101",
+    "S311",
+    "SLF001",
+    "SIM110",
+    "TD003",
+
+    "T201",
+    "RUF001",
+    "RUF002",
+    "RUF003",
+
+    "DTZ005",
+    "ANN001",
+    "ANN201",
+    "ANN202",
+    "ANN204",
+    "ANN205",
+    "E731",
+    "G004",
+    "E402",
+    "C901",
+    "ISC002",
+    "RET504",
+    "PLC0206",
+    "PERF401",
+    "PLR0912",
+    "PLR0913",
+    "PLR0914",
+    "PLR0915",
+    "PLR0917",
+    "N812",
+    "PTH207",
+    "S307",
+    "S324",
+    "S404",
+    "S603",
+    "SIM108",
+]
+preview = true
+fixable = ["ALL"]
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+    "*.ipynb",
+]
+
+[lint.pycodestyle]
+max-doc-length = 120
+
+[lint.isort]
+section-order = [
+    "future",
+    "standard-library",
+    "third-party",
+    "first-party",
+    "local-folder",
+]
